@@ -1,0 +1,125 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }}
+    <html>
+      <style>
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: seagreen;
+  background-size: cover;
+}
+
+.box{
+  width: 650px;
+  background: rgba(22, 20, 20, 0.4);
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  color: white;
+  font-family: 'Century Gothic',sans-serif;
+}
+.box-img{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.box h1{
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: 100;
+}
+.box h5{
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+.box p{
+  text-align: center;
+}
+ul{
+  margin: 0;
+  padding: 0;
+} 
+.box li{
+  display: inline-block;
+  margin: 6px;
+  list-style: none;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.formnew{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+   
+      </style>
+    
+      
+    <body>
+        <div class="box">
+ 
+    
+    <table >
+    <tr>
+    <td> 
+   
+   </td>
+   </tr>
+   <tr>
+   <td width="630px">  
+     <div class="formnew">
+      <h2>Tambah Item</h2>
+    <form method="POST" action="insert" enctype="multipart/form-data">
+      <label> Nama </label><input type="text" name="nama" placeholder="Masukan nama..." /><br />
+      <label> Merk </label><input type="text" name="merk" placeholder="Masukan merk..." /><br />
+      <label> Size </label><input type="text" name="size" placeholder="Masukan ukuran..." /><br />
+      <label> Harga </label><input type="text" name="harga" placeholder="Masukan harga..." /><br />
+      <label> Model </label><select id="model" name="model">
+  <option value="Sports">Sports</option>
+  <option value="Casual">Casual</option>
+
+</select><br />
+      <label> Gambar </label><input type="text" name="gambar" placeholder="Masukan nama gambar..." /><br />
+      <label>The file :</label><input type="file" name="file" required />
+			<br />
+      <input type="submit" value="Save" />
+      </form>
+    </div>
+      </td>
+      </tr>
+      </table>
+     
+    </div>            
+  </body>
+</html>
+
+  {{ template "Footer" }}
+{{ end }}

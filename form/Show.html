@@ -1,0 +1,135 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+
+        <html>
+      <style>
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: seagreen;
+  background-size: cover;
+}
+
+.box{
+  width: 800px;
+  background: rgba(22, 20, 20, 0.4);
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  color: white;
+  font-family: 'Century Gothic',sans-serif;
+}
+.box-img{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.box h1{
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: 100;
+}
+.box h5{
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+.box p{
+  text-align: center;
+}
+ul{
+  margin: 0;
+  padding: 0;
+} 
+.box li{
+  display: inline-block;
+  margin: 6px;
+  list-style: none;
+}
+.merk{
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-stretch: extra-condensed;
+  padding-left: 50px;
+
+}
+.detail{
+  align-content: flex-start;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: inherit;
+  opacity: 10;
+  padding-left: 60px;
+
+}
+.buy{
+  
+  width: 100%;
+  border: 2px solid #4CAF50;
+  height: 30px;
+}   
+
+.buy:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  #katalog {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#katalog td, #katalog th {
+  border: 1px solid rgba(209, 206, 206, 0.342);
+  padding: 8px;
+}
+
+#katalog tr:nth-child(odd){background-color: #f2f2f2;}
+
+
+#katalog th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #038b08;
+  color: white;
+  text-align: center;
+}
+      </style>
+    
+      
+    <body>
+        <div class="box">
+  
+<table id="katalog">
+  <tr>
+    <td>
+      <p>
+        <img src=/./files/{{.Gambar}}.png width="400px" height="400px">
+        </p>    
+    </td>
+    <td>
+      <div class="merk">{{ .Nama }}</div><br>
+     <div class="detail"> 
+      Merk:  {{ .Merk }}<br>
+      Harga:  {{ .Harga }}<br>
+      Model:  {{ .Model }}<br>
+      Available:  {{ .Size }}<br>
+      <br>
+      <a href="/edit?id={{ .Id }}"><button class="buy">EDIT</button></a>
+    </div>
+
+    </td>
+  </tr>
+</table>
+     
+    </div>            
+  </body>
+</html>
+  {{ template "Footer" }}
+{{ end }}

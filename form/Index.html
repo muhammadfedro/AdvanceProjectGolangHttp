@@ -1,0 +1,146 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Login"  }}
+    <html>
+      <style>
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: seagreen;
+  background-size: cover;
+}
+
+.box{
+  width: 730px;
+  background: rgba(22, 20, 20, 0.4);
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  color: white;
+  font-family: 'Century Gothic',sans-serif;
+}
+        .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+  }
+  
+  .button2:hover {
+    background-color: #008CBA;
+    color: white;
+  }
+
+  
+  .button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid red;
+  }
+  
+  .button3:hover {
+    background-color: red;
+    color: white;
+  }
+  td{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .pilih {
+  background-color:  rgba(22, 20, 20, 0.4);
+  font-style: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  text-align: left;
+  width: 530px;
+}
+
+
+#katalog {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#katalog td, #katalog th {
+  border: 1px solid rgba(209, 206, 206, 0.342);
+  padding: 8px;
+}
+
+#katalog tr:nth-child(even){background-color: #f2f2f2;}
+#katalog tr:nth-child(odd){background-color: #bbb8b8;}
+
+#katalog tr:hover {background-color: rgba(189, 238, 14, 0.432);}
+
+#katalog th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #038b08;
+  color: white;
+  text-align: center;
+}
+
+      </style>
+    
+      
+    <body>
+        <div class="box">
+          
+         
+            
+
+            
+            <table id="katalog">
+              <tr><th colspan="3"><h2>DAFTAR KATALOG </h2></th></tr>
+              
+              {{ range . }}
+              <thead>
+              <tr>
+                
+                <td colspan="3"></td>
+             
+                
+                
+              </tr>
+               </thead>
+               <tbody>
+            
+              <tr>
+                <td><img src=/./files/{{.Gambar}}.png width="100px" height="100px"></td>
+                <td width="400px">        
+                  <a href="/showu?id={{ .Id }}"><button class="pilih" >
+                    <b> {{ .Nama }}</b> <br>
+                    {{ .Merk }} <br>
+                    Rp.{{ .Harga }},00 <br>
+                    {{ .Model }}<br>
+                    Available: {{ .Size }} 
+                  </button></a>          
+               
+              </td>
+                              </tr>
+            {{ end }}
+               </tbody>
+            </table>
+         </div>            
+        </body>
+      </html>
+  {{ template "Footer" }}
+{{ end }}
