@@ -77,16 +77,16 @@
 <button class="open-button" onclick="openForm()">Login For Admin</button>
 
 <div class="form-popup" id="myForm">
-  <form action="/admin" class="form-container">
-    <h1>Login</h1>
+  <form action="/login" class="form-container">
+    <h1>Login  {{.err}}</h1>
+   
+ 
+    <input type="text" placeholder="Enter Email" name="user" required>
 
  
-    <input type="text" placeholder="Enter Email" name="username" required>
+    <input type="password" placeholder="Enter Password" name="pass" required>
 
- 
-    <input type="password" placeholder="Enter Password" name="userpassword" required>
-
-    <button type="submit" class="btn" onclick="doLogin()">Login</button>
+    <button type="submit" class="btn">Login</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
@@ -99,16 +99,6 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-    function doLogin(){
-      var un = document.getElementById("username").value;
-      var pw = document.getElementById("userpassword").value;
-      if (un ==="enigma" && pw==="123"){
-         location.replace("/admin")
-      }else{
-          document.getElementById("error-message").innerHTML="Unknown user"
-      }
-    }
-
 </script>
 
  
